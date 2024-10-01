@@ -21,12 +21,12 @@ Sigue estos pasos para clonar e iniciar el proyecto localmente:
 # Clona el repositorio en tu máquina local
 git clone https://github.com/tuusuario/NormalGest.git
 ```
-# Entra en el directorio del proyecto
 ```bash
+# Entra en el directorio del proyecto
 cd NormalGest
 ```
-# Abre el archivo index.html en tu navegador
 ```bash
+# Abre el archivo index.html en tu navegador
 open index.html
 ```
 ## Uso
