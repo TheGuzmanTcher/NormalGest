@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información del Desarrollador</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Iconos de Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.18/jspdf.plugin.autotable.min.js"></script>
+    <style>
+
+        /* Estilo del botón para móviles */
+.toggle-btn {
+    display: none; /* Ocultar por defecto en pantallas grandes */
+}
+/* Mostrar el botón en móviles */
+@media (max-width: 768px) {
+    .toggle-btn {
+        display: block; /* Mostrar el botón en dispositivos móviles */
+        top: 10px; /* Asegurado en la esquina superior */
+        right: 20px; /* Asegurado en la esquina derecha */
+        z-index: 1001; /* Asegurar que esté por encima de otros elementos */
+    }
+}
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .dashboard {
+            width: 95%;
+        }
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .header-content {
+            width: 100%;
+            display: block;
+            margin: 1rem 0;
+        }
+        .section {
+            margin-bottom: 20px;
+            width: 100%; /* Asegura que la sección ocupe el 100% */
+        }
+        h1, h2 {
+            color: #2E8BC0; /* Cambiado a un azul más vibrante */
+            text-align: center; /* Centrar el texto de encabezados */
+        }
+        .info-box {
+            background-color: #e1f5fe; /* Color más claro para el fondo de información */
+            border-left: 5px solid #2E8BC0; /* Color de la barra lateral */
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .contact-info i {
+            margin-right: 10px;
+            color: #2E8BC0; /* Cambiado a un azul más vibrante */
+        }
+        #map {
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            height: 400px; /* Altura del mapa */
+            width: 100%; /* Asegura que el mapa ocupe el 100% del contenedor */
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>SoftwareGEST</h2>
+        <ul>
+            <a href="index.html">Cobros/Pagos</a>
+            <a href="guia.html">Guía de Uso</a>
+            <a class="active" href="info.html">Desarrollador</a>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <div class="header-content">
+                <h1>Registro de Pagos</h1>
+                <button class="toggle-btn">
+                    &#9776; <!-- Icono de tres barras -->
+                </button>
+            </div>
+        </header>              
+
+        <section class="dashboard">
+            <div class="section desarrollador">
+                <h2>Detalles de Contacto</h2>
+                <div class="info-box">
+                    <div class="contact-info">
+                        <i class="fas fa-user"></i>
+                        <p><strong>Nombre:</strong> Tu Nombre</p>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <p><strong>Correo Electrónico:</strong> <a href="mailto:theguzmanteacher@outlook.com">theguzmanteacher@outlook.com</a></p>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-phone-alt"></i>
+                        <p><strong>Número de Teléfono:</strong> <a href="https://wa.me/9342622029">+52 934 262 2029 (WhatsApp)</a></p>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fab fa-github"></i>
+                        <p><strong>GitHub:</strong> <a href="https://github.com/tgtheacher" target="_blank">tgtheacher</a> (próximamente)</p>
+                    </div>
+                </div>
+                
+                <h2>Ubicación</h2>
+                <p>Estudio en la <strong>Escuela Normal Urbana de Balancan</strong>.</p>
+                <div id="map"></div> <!-- Mapa -->
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Cargar Google Maps
+        function initMap() {
+            const location = { lat: 17.6465, lng: -92.2313 }; // Coordenadas de la Escuela Normal Urbana de Balancan
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: location,
+            });
+            const marker = new google.maps.Marker({
+                position: location,
+                map: map,
+            });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script> <!-- Reemplaza YOUR_API_KEY con tu clave de API de Google Maps -->
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoftwareGEST</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.18/jspdf.plugin.autotable.min.js"></script>    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>SoftwareGEST</h2>
+        <ul>
+            <a class="active" href="index.html">Cobros/Pagos</a>
+            <a href="guia.html">Guía de Uso</a>
+            <a href="info.html">Desarrollador</a>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <div class="header-content">
+                <h1>Registro de Pagos</h1>
+                <button class="toggle-btn">
+                    &#9776; <!-- Icono de tres barras -->
+                </button>
+            </div>
+        </header>              
+        <section class="dashboard">
+            <div class="section cobros">
+                <h2>Cobros pendientes</h2>
+                
+                <div class="container">
+                    <!-- Formulario para datos adicionales -->
+                    <div class="admin-info">
+                        <label for="adminNombre">Nombre del Administrador:</label>
+                        <input type="text" id="adminNombre" placeholder="Ingresa tu nombre" class="input-style">
+                        
+                        <label for="grado">Grado:</label>
+                        <input type="text" id="grado" placeholder="Ingresa el grado" class="input-style">
+                        
+                        <label for="grupo">Grupo:</label>
+                        <input type="text" id="grupo" placeholder="Ingresa el grupo" class="input-style">
+                        
+                        <label for="licenciatura">Licenciatura:</label>
+                        <input type="text" id="licenciatura" placeholder="Ingresa la licenciatura" class="input-style">
+                        
+                        <label for="mes">Mes:</label>
+                        <input type="text" id="mes" placeholder="Ingresa el mes" class="input-style">
+                    </div>
+
+                    <!-- Formulario para agregar un alumno -->
+                    <div class="add-alumno">
+                        <input type="text" id="alumnoNombre" placeholder="Nombre del Alumno" class="input-style">
+                        <button onclick="addAlumno()" class="btn btn-add">Agregar Alumno</button>
+                    </div>
+                    <div style="overflow-x: auto;">
+                        <table id="cobrosTable" class="styled-table">
+                            <thead>
+                                <tr>
+                                    <th></th> <!-- Espacio para el botón de eliminar -->
+                                    <th>Nombre del Alumno</th>
+                                    <th class="semana1">Semana 1</th>
+                                    <th class="semana2">Semana 2</th>
+                                    <th class="semana3">Semana 3</th>
+                                    <th class="semana4">Semana 4</th>
+                                    <th class="semana5">Semana 5</th>
+                                    <th class="total-header">Total Recaudado</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+                                <!-- Aquí es donde se agregarán los alumnos -->
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="2">Total Recaudado:</td>
+                                    <td id="totalSemana1">0</td>
+                                    <td id="totalSemana2">0</td>
+                                    <td id="totalSemana3">0</td>
+                                    <td id="totalSemana4">0</td>
+                                    <td id="totalSemana5">0</td>
+                                    <td id="totalGeneral">0</td>
+                                </tr>
+                            </tfoot>
+                        </table>                        
+                    </div>                    
+                </div>
+                <h2>Total Semanal: <span id="totalSemanal">0</span> MXN</h2>
+                <button id="addWeek" onclick="addWeek()">Agregar Semana</button>
+                <button id="removeWeek" onclick="removeWeek()">Quitar Semana</button>
+                <button class="cobrar-btn" onclick="exportToPDF()">Exportar PDF</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

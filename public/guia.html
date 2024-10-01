@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Uso - SoftwareGEST</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>SoftwareGEST</h2>
+        <ul>
+            <a href="index.html">Cobros/Pagos</a>
+            <a class="active">Guía de Uso</a>
+            <a href="info.html">Desarrollador</a>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <div class="header-content">
+                <h1>Uso del Gestor de Recaudaciones</h1>
+                <button class="toggle-btn">
+                    &#9776; <!-- Icono de tres barras -->
+                </button>
+            </div>
+        </header>  
+    
+        <section class="dashboard">
+            <div class="section guia">
+                <h2>Cómo usar la aplicación</h2>
+                
+                <p>
+                    Bienvenido a SoftwareGEST, una herramienta diseñada para gestionar cobros y pagos de manera eficiente.
+                    A continuación, se detallan las funcionalidades principales de la aplicación.
+                </p>
+
+                <h3>1. Registro de Pagos</h3>
+                <p>
+                    En esta sección puedes registrar los pagos realizados por los alumnos. 
+                    Completa los campos requeridos y presiona el botón "Agregar Alumno" para añadir a un nuevo estudiante.
+                </p>
+                <div class="admin-info">
+                    <label for="adminNombre">Nombre del Administrador:</label>
+                    <input type="text" id="adminNombre" placeholder="Ingresa tu nombre" class="input-style" disabled>
+                    
+                    <label for="grado">Grado:</label>
+                    <input type="text" id="grado" placeholder="Ingresa el grado" class="input-style" disabled>
+                    
+                    <label for="grupo">Grupo:</label>
+                    <input type="text" id="grupo" placeholder="Ingresa el grupo" class="input-style" disabled>
+                    
+                    <label for="licenciatura">Licenciatura:</label>
+                    <input type="text" id="licenciatura" placeholder="Ingresa la licenciatura" class="input-style" disabled>
+                    
+                    <label for="mes">Mes:</label>
+                    <input type="text" id="mes" placeholder="Ingresa el mes" class="input-style" disabled>
+                </div>
+
+                <h3>2. Tabla de Alumnos</h3>
+                <p>
+                    La tabla muestra a todos los alumnos registrados y sus pagos correspondientes por semana. 
+                    Puedes agregar un nuevo alumno usando el botón "Agregar Alumno", y para eliminar un alumno de la lista, presiona el botón "Eliminar" en la fila correspondiente.
+                </p>
+                <input type="text" id="adminNombre" placeholder="Juan Pérez" class="input-style" disabled>
+                <button class="cobrar-btn">Agregar Alumno</button>
+                <div style="overflow-x: auto;">
+                    <table id="cobrosTable" class="styled-table">
+                        <thead>
+                            <tr>
+                                <th></th> <!-- Espacio para el botón de eliminar -->
+                                <th>Nombre del Alumno</th>
+                                <th class="semana1">Semana 1</th>
+                                <th class="semana2">Semana 2</th>
+                                <th class="semana3">Semana 3</th>
+                                <th class="semana4">Semana 4</th>
+                                <th class="semana5">Semana 5</th>
+                                <th class="total-header">Total Recaudado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <tr>
+                                <td><button class="btn-delete">Eliminar</button></td>
+                                <td>Juan Pérez</td>
+                                <td>10</td>
+                                <td>10</td>
+                                <td>10</td>
+                                <td>10</td>
+                                <td>10</td>
+                                <td>50</td>
+                            </tr>
+                            <!-- Se pueden agregar más filas aquí -->
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2">Total Recaudado:</td>
+                                <td id="totalSemana1">10</td>
+                                <td id="totalSemana2">0</td>
+                                <td id="totalSemana3">0</td>
+                                <td id="totalSemana4">0</td>
+                                <td id="totalSemana5">0</td>
+                                <td id="totalGeneral"></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <h3>3. Exportar Reportes</h3>
+                <p>
+                    Puedes exportar los datos a un archivo PDF utilizando el botón "Exportar PDF". Asegúrate de que todos los datos estén completos antes de exportar.
+                </p>
+                <button class="cobrar-btn">Exportar PDF</button>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,405 @@
+/* Reseteo de márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+p {
+    text-align: justify;
+}
+
+h3 {
+    margin-top: 1rem;
+}
+
+/* Estilos del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+/* Estilos de la barra lateral */
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    position: fixed;
+    height: 100vh;
+    padding: 20px;
+    color: white;
+    transition: transform 0.3s ease; /* Transición suave */
+    z-index: 1000; /* Asegurar que esté por encima de otros elementos */
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%); /* Ocultar la barra lateral */
+}
+
+.sidebar h2 {
+    color: #fff;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.sidebar ul a {
+    color: white;
+    cursor: pointer;
+    display: block;
+    border-radius: .2rem;
+    padding: .5rem;
+}
+
+.sidebar ul a.active {
+    background-color: #1abc9c;
+}
+
+/* Estilo del botón para móviles */
+.toggle-btn {
+    padding: .5rem;
+    background-color: #1abc9c;
+    border: none;
+    border-radius: .3rem;
+    color: white;
+}
+
+.toggle-btn:hover {
+    background-color: #16a085; /* Cambio de color al pasar el ratón */
+}
+
+/* Contenido principal */
+.main-content {
+    margin-left: 260px; /* Espacio para la barra lateral */
+    padding: 0 20px 0 0;
+    transition: margin-left 0.3s ease; /* Transición suave */
+}
+
+.main-content.expanded {
+    margin-left: 0; /* Ajustar margen al ocultar la barra lateral */
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #fff; /* Fondo blanco */
+    padding: 20px 20px;
+    margin-bottom: 1rem;
+    position: relative; /* Asegurarse de que el header esté en la posición correcta */
+    z-index: 10; /* Asegura que esté por encima de la barra lateral */
+    border-radius: 10px;
+}
+
+
+/* Contenido del encabezado */
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Espaciado entre el título y el botón */
+    align-items: center; /* Alinear verticalmente */
+}
+
+/* Estilo del título */
+.header-content h1 {
+    margin: 0; /* Sin márgenes para el título */
+    font-size: 1.5rem; /* Tamaño del texto */
+}
+
+/* Estilo del botón para móviles */
+.toggle-btn {
+    display: none; /* Ocultar por defecto en pantallas grandes */
+}
+
+/* Mostrar el botón en móviles */
+@media (max-width: 768px) {
+    .toggle-btn {
+        display: block; /* Mostrar el botón solo en móviles */
+    }
+}
+
+/* Estilos de las secciones */
+.section {
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos de títulos */
+h2 {
+    margin-bottom: 15px;
+}
+
+/* Estilos de tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Estilos de inputs y botones */
+.input-style {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 5px; /* Espacio alrededor de cada input */
+    flex: 1; /* Hacer que los inputs ocupen espacio equitativo */
+    max-width: 200px; /* Tamaño máximo de los inputs */
+}
+
+/* Ajustes para asegurarse de que los inputs se alineen bien */
+.input-container {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los inputs se envuelvan */
+    justify-content: flex-start; /* Alinear al inicio */
+}
+
+/* Estilo para etiquetas */
+label {
+    flex-basis: 100%; /* Hacer que las etiquetas ocupen el ancho completo */
+    margin-bottom: 5px; /* Espacio inferior de las etiquetas */
+}
+
+/* Estilos de botones */
+.cobrar-btn, #addWeek, #removeWeek,
+.btn-add, .btn-export, .btn-delete {
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.cobrar-btn, #addWeek, #removeWeek {
+    background-color: #27ae60;
+    color: white;
+}
+
+.cobrar-btn:hover, #addWeek:hover, #removeWeek:hover {
+    background-color: #219150;
+}
+
+.btn-add {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-add:hover {
+    background-color: #218838;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+.btn-export {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-export:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos de tablas con estilo */
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+/* Otros estilos */
+input[type="checkbox"] {
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.container {
+    padding: 20px;
+}
+
+.add-alumno {
+    margin: 40px 0 20px 0;
+}
+
+/* Espaciado para las tablas */
+tbody td[contenteditable="true"] {
+    background-color: #f9f9f9;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .cobrar-btn{
+        width: 100%;
+    }
+    #addWeek, #removeWeek {
+        display: none;
+    }
+    .sidebar {
+        width: 200px; /* Tamaño reducido en móviles */
+        position: absolute; /* Cambiar a absolute */
+        height: auto; /* Ajustar altura en móviles */
+        z-index: 1000; /* Asegura que la barra esté debajo del contenido principal */
+    }
+
+    .main-content {
+        margin-left: 20px; /* El contenido ocupa todo el ancho */
+        padding: 20px; /* Asegurar espaciado interno */
+        border-radius: 10px; /* Aplicar border-radius a todo el contenedor */
+        background-color: #fff; /* Mantener el fondo blanco */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añadir sombra para que destaque */
+    }
+
+    .toggle-btn {
+        display: block; /* Mostrar el botón en dispositivos móviles */
+        top: 10px; /* Asegurado en la esquina superior */
+        right: 20px; /* Asegurado en la esquina derecha */
+        z-index: 1001; /* Asegurar que esté por encima de otros elementos */
+    }
+
+    .header-content {
+        justify-content: space-between; /* Mantener el espaciado en móviles */
+        padding: 10px 20px; /* Espaciado del encabezado */
+    }
+
+    .input-container {
+        flex-direction: column; /* Cambiar a columna en móviles */
+        align-items: stretch; /* Alinear los inputs */
+    }
+
+    .input-style {
+        width: 100%; /* Los inputs ocupan todo el ancho en móviles */
+        max-width: none; /* Desactivar el ancho máximo */
+        margin: 5px 0; /* Espaciado vertical */
+    }
+}
+
+@media (max-width: 480px) {
+    .cobrar-btn{
+        width: 100%;
+    }
+    #addWeek, #removeWeek {
+        display: none;
+    }
+    .sidebar {
+        width: 70%; /* Barra lateral ocupa un 70% del ancho en móviles */
+        height: 100%; /* Ajustar altura en móviles */
+        z-index: 1000;
+    }
+
+    .main-content {
+        margin-left: 20px; /* Dejar margen izquierdo */
+        border-radius: 10px; /* Mantener el border-radius */
+        background-color: #fff; /* Fondo blanco para visibilidad */
+        padding: 20px; /* Asegurar espaciado adecuado */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    }
+}
+
+/* Responsividad para botones en móviles */
+@media (max-width: 768px) {
+    .button-container {
+        display: flex; /* Usar flexbox para alinear los botones */
+        justify-content: center; /* Centrar los botones horizontalmente */
+        flex-wrap: wrap; /* Permitir que los botones se acomoden uno debajo del otro */
+        gap: 10px; /* Añadir espacio entre los botones */
+    }
+
+    .button-style {
+        width: 100%; /* Los botones ocuparán todo el ancho disponible */
+        max-width: 300px; /* Limitar el ancho máximo de los botones */
+        margin: 5px auto; /* Centrar los botones */
+    }
+}
+
+/* Ajuste de la tabla en móviles */
+@media (max-width: 768px) {
+    .table-container {
+        width: 100%; /* Asegurar que el contenedor de la tabla ocupe todo el ancho */
+        overflow-x: auto; /* Permitir desplazamiento horizontal si es necesario */
+    }
+
+    table {
+        width: 100%; /* Hacer que la tabla ocupe el 100% del ancho del contenedor */
+        min-width: 600px; /* Ajustar el ancho mínimo para evitar columnas muy pequeñas */
+    }
+
+    th, td {
+        padding: 10px; /* Asegurar espaciado en celdas */
+        text-align: left; /* Alinear el texto a la izquierda */
+        white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
+    }
+}
+
+/* Responsividad para móviles */
+@media (max-width: 768px) {
+    /* Ocultar semanas 2 a 5 en móviles */
+    .semana2, .semana3, .semana4, .semana5,
+    td:nth-child(4), td:nth-child(5), td:nth-child(6), td:nth-child(7),
+    tfoot td:nth-child(4), tfoot td:nth-child(5), tfoot td:nth-child(6), tfoot td:nth-child(7) {
+        display: none;
+    }
+
+    /* Ajustar el ancho del contenido visible */
+    .styled-table {
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .styled-table th, .styled-table td {
+        padding: 8px 10px;
+    }
+}
