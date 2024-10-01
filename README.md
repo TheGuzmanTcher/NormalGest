@@ -19,7 +19,7 @@ Sigue estos pasos para clonar e iniciar el proyecto localmente:
 
 ```bash
 # Clona el repositorio en tu máquina local
-git clone https://github.com/tuusuario/NormalGest.git
+git clone https://github.com/theguzmantcher/NormalGest.git
 ```
 ```bash
 # Entra en el directorio del proyecto
