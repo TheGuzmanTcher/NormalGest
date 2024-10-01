@@ -1,53 +1,72 @@
-1. Nombre del Proyecto:
-NormalGest
+# NormalGest
 
-2. Descripción Breve:
-NormalGest es una aplicación web diseñada para gestionar de manera eficiente los pagos y contribuciones dentro de instituciones educativas, como la Escuela Normal, permitiendo un control claro y accesible de cobros, totales y reportes.
+NormalGest es una aplicación sencilla para la gestión de pagos semanales de alumnos, diseñada para facilitar el registro de recaudaciones y generar reportes en formato PDF. Ideal para administradores de pequeños grupos que necesitan un seguimiento claro y eficiente.
 
-3. Descripción Detallada:
-NormalGest es una plataforma de gestión de pagos creada para facilitar la organización y el seguimiento de las contribuciones semanales en el contexto escolar. Con esta aplicación, administradores y docentes pueden registrar pagos, generar reportes PDF, visualizar cobros pendientes, y gestionar información sobre los alumnos. Además, ofrece una interfaz moderna, intuitiva, y completamente responsiva, optimizada tanto para dispositivos móviles como para escritorio.
+## Características
+- Registro de pagos semanales por alumno.
+- Generación automática de reportes en PDF con la opción de exportar.
+- Interfaz sencilla y fácil de usar.
+- Diseño adaptado para escritorio y dispositivos móviles.
 
-Funcionalidades clave incluyen:
+## Requisitos
 
-Registro de pagos semanales para alumnos.
-Generación automática de reportes en formato PDF.
-Exportación de datos para análisis más detallados.
-Gestión visual de cobros pendientes y totales recaudados.
-Sección dedicada para el uso y contacto del desarrollador.
-Integración con Google Maps para mostrar la ubicación de la institución educativa.
-4. Características Principales:
-Interfaz Amigable: Diseño moderno, minimalista y centrado en la facilidad de uso.
-Gestión de Pagos: Registro rápido y visual de los pagos de cada alumno con detalles semanales.
-Generación de Reportes: Exporta los datos a un PDF con un solo clic para un control de pagos más formal.
-Personalización: Puedes ingresar la información del administrador (nombre, grado, grupo, etc.) y el sistema generará reportes precisos.
-Responisividad: Totalmente adaptado para uso tanto en PC como en dispositivos móviles.
-Sección del Desarrollador: Información clara y accesible del desarrollador para soporte técnico o contacto.
-5. Tecnologías Utilizadas:
-HTML5, CSS3, JavaScript
-Frameworks y bibliotecas: jsPDF, jsPDF-AutoTable
-Google Maps API
-6. Instalación:
-Para correr NormalGest localmente, sigue estos pasos:
+- Navegador web moderno.
+- Editor de texto para hacer cambios (opcional).
 
-Clona este repositorio en tu máquina:
-bash
-Copiar código
+## Instalación
+
+Sigue estos pasos para clonar e iniciar el proyecto localmente:
+
+```bash
+# Clona el repositorio en tu máquina local
 git clone https://github.com/tuusuario/NormalGest.git
-Navega al directorio del proyecto:
-bash
-Copiar código
+```
+# Entra en el directorio del proyecto
+```bash
 cd NormalGest
-Abre el archivo index.html en tu navegador.
-7. Uso:
-Accede a la aplicación.
-Ingresa la información del administrador (nombre, grado, grupo, etc.).
-Agrega los nombres de los alumnos y sus pagos semanales.
-Visualiza y exporta reportes en PDF sobre el estado de los pagos.
-Navega a la sección de contacto para asistencia o consultas adicionales.
-8. Contribuciones:
-Las contribuciones son bienvenidas. Si deseas mejorar el proyecto, por favor crea un pull request o reporta un issue en GitHub.
+```
+# Abre el archivo index.html en tu navegador
+```bash
+open index.html
+```
+## Uso
 
-9. Licencia:
-Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para obtener más información.
+### 1. Registro de Pagos
+- **Ingresa los datos del administrador**: nombre, grado, grupo, licenciatura, y mes.
+- **Agrega los nombres de los alumnos**: Usa el formulario para agregar los nombres de los alumnos que harán los pagos.
+- **Selecciona los pagos realizados por semana**: Marca las casillas correspondientes para indicar los pagos que se han hecho.
+- **Visualiza los totales**: La tabla de pagos mostrará los totales recaudados por semana y por alumno.
 
-Con estas descripciones, puedes subir el proyecto NormalGest a GitHub de manera clara y organizada.
+### 2. Generación de Reportes
+- **Exportar PDF**: Haz clic en el botón **"Exportar PDF"** para generar un reporte de los pagos en formato PDF.
+- El **PDF generado** incluirá:
+  - Nombres de los alumnos.
+  - Semanas en las que se ha pagado.
+  - El total recaudado por cada alumno.
+  - Total general de la recaudación semanal.
+
+## Funcionalidades Clave
+
+- **Agregar Alumno**: Permite ingresar el nombre de un alumno y agregarlo a la lista de pagos.
+- **Eliminar Alumno**: Permite eliminar un alumno de la lista si ya no es necesario seguir su registro.
+- **Generar Reporte**: Genera un informe en PDF con todos los pagos registrados hasta el momento.
+- **Interfaz Responsive**: Adaptable tanto para uso en ordenadores como en dispositivos móviles.
+
+## Contribuir
+
+Si deseas contribuir a este proyecto, puedes seguir los pasos a continuación:
+
+```bash
+# Crea una nueva rama para tu funcionalidad
+git checkout -b nueva-funcionalidad
+
+# Agrega tus cambios
+git add .
+
+# Confirma tus cambios
+git commit -m "Agrega nueva funcionalidad"
+
+# Sube los cambios a tu repositorio
+git push origin nueva-funcionalidad
+
+# Crea un Pull Request en GitHub
